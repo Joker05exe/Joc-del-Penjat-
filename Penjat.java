@@ -76,16 +76,19 @@ public class Penjat {
     }
 
     public static char demanarLletra() {
-        char lletra;
-        while (true) {
+        char lletra = ' ';
+        boolean dadaValida = false;
+
+        while (!dadaValida) {
             System.out.print("Entra una lletra: ");
             String entrada = sc.nextLine().toLowerCase();
 
             if (entrada.length() == 1 && entrada.charAt(0) >= 'a' && entrada.charAt(0) <= 'z') {
                 lletra = entrada.charAt(0);
-                break;
+                dadaValida = true;
+            } else {
+                System.out.println("⚠️ Introdueix una lletra vàlida (a-z).");
             }
-            System.out.println("⚠️ Introdueix una lletra vàlida (a-z).");
         }
         return lletra;
     }
